@@ -1,0 +1,176 @@
+{
+  "components": [
+    {
+      "text": "# Scholarship Application\nComplete all fields. Amounts are in INR.",
+      "type": "text",
+      "id": "Text_title",
+      "layout": {
+        "row": "Row_sch_0",
+        "columns": null
+      }
+    },
+    {
+      "label": "Student ID",
+      "type": "textfield",
+      "id": "Field_studentId",
+      "key": "studentId",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_sch_1",
+        "columns": null
+      }
+    },
+    {
+      "label": "Student name",
+      "type": "textfield",
+      "id": "Field_studentName",
+      "key": "studentName",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_sch_2",
+        "columns": null
+      }
+    },
+    {
+      "label": "Student email",
+      "type": "textfield",
+      "id": "Field_studentEmail",
+      "key": "studentEmail",
+      "validate": {
+        "required": true,
+        "validationType": "email"
+      },
+      "layout": {
+        "row": "Row_sch_3",
+        "columns": null
+      }
+    },
+    {
+      "label": "Course",
+      "type": "select",
+      "id": "Field_course",
+      "key": "course",
+      "validate": {
+        "required": true
+      },
+      "values": [
+        {
+          "label": "B.Tech CSE",
+          "value": "B.Tech CSE"
+        },
+        {
+          "label": "B.Tech ECE",
+          "value": "B.Tech ECE"
+        },
+        {
+          "label": "B.Tech Mechanical",
+          "value": "B.Tech Mechanical"
+        },
+        {
+          "label": "B.Tech Civil",
+          "value": "B.Tech Civil"
+        },
+        {
+          "label": "BBA",
+          "value": "BBA"
+        },
+        {
+          "label": "B.Sc",
+          "value": "B.Sc"
+        }
+      ],
+      "layout": {
+        "row": "Row_sch_4",
+        "columns": null
+      }
+    },
+    {
+      "label": "Income certificate number",
+      "type": "textfield",
+      "id": "Field_incomeCertificateNo",
+      "key": "incomeCertificateNo",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_sch_5",
+        "columns": null
+      }
+    },
+    {
+      "label": "Annual family income (INR)",
+      "type": "number",
+      "id": "Field_familyIncome",
+      "key": "familyIncome",
+      "validate": {
+        "required": true,
+        "min": 0
+      },
+      "decimalDigits": 0,
+      "layout": {
+        "row": "Row_sch_6",
+        "columns": null
+      }
+    },
+    {
+      "label": "Current CGPA (0-10)",
+      "type": "number",
+      "id": "Field_cgpa",
+      "key": "cgpa",
+      "validate": {
+        "required": true,
+        "min": 0,
+        "max": 10
+      },
+      "decimalDigits": 2,
+      "layout": {
+        "row": "Row_sch_7",
+        "columns": null
+      }
+    },
+    {
+      "label": "Attendance (%)",
+      "type": "number",
+      "id": "Field_attendancePercent",
+      "key": "attendancePercent",
+      "validate": {
+        "required": true,
+        "min": 0,
+        "max": 100
+      },
+      "decimalDigits": 0,
+      "layout": {
+        "row": "Row_sch_8",
+        "columns": null
+      }
+    },
+    {
+      "label": "Active backlogs",
+      "type": "number",
+      "id": "Field_activeBacklogs",
+      "key": "activeBacklogs",
+      "validate": {
+        "required": true,
+        "min": 0
+      },
+      "decimalDigits": 0,
+      "layout": {
+        "row": "Row_sch_9",
+        "columns": null
+      }
+    }
+  ],
+  "type": "default",
+  "id": "scholarship-application-form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 16
+}

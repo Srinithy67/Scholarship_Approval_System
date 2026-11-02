@@ -1,0 +1,15 @@
+{
+  "name": "scholarship-workers",
+  "version": "1.0.0",
+  "description": "Camunda 8 external job workers for the Scholarship Approval process",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test ../tests/workers.test.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@camunda8/sdk": "^8.8.18",
+    "dotenv": "^18.0.9"
+  }
+}

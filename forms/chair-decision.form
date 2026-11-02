@@ -1,0 +1,64 @@
+{
+  "components": [
+    {
+      "text": "# Committee chairperson decision",
+      "type": "text",
+      "id": "Text_title",
+      "layout": {
+        "row": "Row_cha_0",
+        "columns": null
+      }
+    },
+    {
+      "text": "**Student:** {{studentName}} ({{studentId}})\n\n**Course:** {{course}}\n\n**Annual family income:** {{familyIncome}} INR\n\n**CGPA:** {{cgpa}} | **Attendance:** {{attendancePercent}}% | **Active backlogs:** {{activeBacklogs}}\n\n**Automatic decision:** {{decisionReason}}\n\n**Proposed category:** {{scholarshipCategory}} | **Amount:** {{scholarshipAmount}} INR",
+      "type": "text",
+      "id": "Text_summary",
+      "layout": {
+        "row": "Row_cha_1",
+        "columns": null
+      }
+    },
+    {
+      "label": "Decision",
+      "type": "radio",
+      "id": "Field_committeeDecision",
+      "key": "committeeDecision",
+      "values": [
+        {
+          "label": "Approve (continue to Vice-Chancellor and Chancellor sign-off)",
+          "value": "APPROVED"
+        },
+        {
+          "label": "Reject",
+          "value": "REJECTED"
+        }
+      ],
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_cha_2",
+        "columns": null
+      }
+    },
+    {
+      "label": "Remarks",
+      "type": "textarea",
+      "id": "Field_chairRemarks",
+      "key": "chairRemarks",
+      "layout": {
+        "row": "Row_cha_3",
+        "columns": null
+      }
+    }
+  ],
+  "type": "default",
+  "id": "chair-decision-form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 16
+}

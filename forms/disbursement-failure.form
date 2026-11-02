@@ -1,0 +1,64 @@
+{
+  "components": [
+    {
+      "text": "# Disbursement failed",
+      "type": "text",
+      "id": "Text_title",
+      "layout": {
+        "row": "Row_dis_0",
+        "columns": null
+      }
+    },
+    {
+      "text": "The accounts system could not process the disbursement request for **{{studentName}}** ({{studentId}}), amount **{{scholarshipAmount}} INR**.\n\nCheck the accounts system, then choose whether to retry the request or hand it over for manual disbursement.",
+      "type": "text",
+      "id": "Text_body",
+      "layout": {
+        "row": "Row_dis_1",
+        "columns": null
+      }
+    },
+    {
+      "label": "Next action",
+      "type": "radio",
+      "id": "Field_retryDisbursement",
+      "key": "retryDisbursement",
+      "values": [
+        {
+          "label": "Retry the request",
+          "value": "RETRY"
+        },
+        {
+          "label": "Give up and process manually",
+          "value": "GIVE_UP"
+        }
+      ],
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_dis_2",
+        "columns": null
+      }
+    },
+    {
+      "label": "Remarks",
+      "type": "textarea",
+      "id": "Field_accountsRemarks",
+      "key": "accountsRemarks",
+      "layout": {
+        "row": "Row_dis_3",
+        "columns": null
+      }
+    }
+  ],
+  "type": "default",
+  "id": "disbursement-failure-form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 16
+}

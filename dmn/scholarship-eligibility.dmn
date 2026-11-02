@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_ScholarshipEligibility" name="Scholarship Eligibility" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.49.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.6.0">
+  <decision id="scholarship_eligibility" name="Scholarship Eligibility">
+    <decisionTable id="DecisionTable_Scholarship" hitPolicy="FIRST" biodi:annotationsWidth="400">
+      <input id="Input_Slab" label="Income slab">
+        <inputExpression id="InputExpression_Slab" typeRef="string">
+          <text>validation.incomeSlab</text>
+        </inputExpression>
+      </input>
+      <input id="Input_Cgpa" label="CGPA">
+        <inputExpression id="InputExpression_Cgpa" typeRef="number">
+          <text>cgpa</text>
+        </inputExpression>
+      </input>
+      <input id="Input_Academic" label="Academic criteria met">
+        <inputExpression id="InputExpression_Academic" typeRef="boolean">
+          <text>validation.academicCriteriaMet</text>
+        </inputExpression>
+      </input>
+      <output id="Output_Eligibility" label="Eligibility" name="eligibility" typeRef="string" />
+      <output id="Output_Category" label="Scholarship category" name="scholarshipCategory" typeRef="string" />
+      <output id="Output_Amount" label="Amount (INR)" name="scholarshipAmount" typeRef="number" />
+      <output id="Output_Reason" label="Decision reason" name="decisionReason" typeRef="string" />
+      <rule id="Rule_1">
+        <description>R1 academic gate</description>
+        <inputEntry id="Rule_1_in1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="Rule_1_in2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="Rule_1_in3">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="Rule_1_out1">
+          <text>"Ineligible"</text>
+        </outputEntry>
+        <outputEntry id="Rule_1_out2">
+          <text>"NONE"</text>
+        </outputEntry>
+        <outputEntry id="Rule_1_out3">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="Rule_1_out4">
+          <text>"Academic criteria not met (CGPA, attendance or backlogs)"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_2">
+        <description>R2 income gate</description>
+        <inputEntry id="Rule_2_in1">
+          <text>"HIGH"</text>
+        </inputEntry>
+        <inputEntry id="Rule_2_in2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="Rule_2_in3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="Rule_2_out1">
+          <text>"Ineligible"</text>
+        </outputEntry>
+        <outputEntry id="Rule_2_out2">
+          <text>"NONE"</text>
+        </outputEntry>
+        <outputEntry id="Rule_2_out3">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="Rule_2_out4">
+          <text>"Family income above the scholarship limit"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_3">
+        <description>R3</description>
+        <inputEntry id="Rule_3_in1">
+          <text>"LOW"</text>
+        </inputEntry>
+        <inputEntry id="Rule_3_in2">
+          <text>&gt;= 8.5</text>
+        </inputEntry>
+        <inputEntry id="Rule_3_in3">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="Rule_3_out1">
+          <text>"Eligible"</text>
+        </outputEntry>
+        <outputEntry id="Rule_3_out2">
+          <text>"FULL_TUITION_WAIVER"</text>
+        </outputEntry>
+        <outputEntry id="Rule_3_out3">
+          <text>100000</text>
+        </outputEntry>
+        <outputEntry id="Rule_3_out4">
+          <text>"Low income slab and CGPA 8.5 or above"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_4">
+        <description>R4</description>
+        <inputEntry id="Rule_4_in1">
+          <text>"LOW"</text>
+        </inputEntry>
+        <inputEntry id="Rule_4_in2">
+          <text>[7.5..8.5)</text>
+        </inputEntry>
+        <inputEntry id="Rule_4_in3">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="Rule_4_out1">
+          <text>"Eligible"</text>
+        </outputEntry>
+        <outputEntry id="Rule_4_out2">
+          <text>"PARTIAL_A"</text>
+        </outputEntry>
+        <outputEntry id="Rule_4_out3">
+          <text>60000</text>
+        </outputEntry>
+        <outputEntry id="Rule_4_out4">
+          <text>"Low income slab and CGPA 7.5 to below 8.5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_5">
+        <description>R5</description>
+        <inputEntry id="Rule_5_in1">
+          <text>"MIDDLE"</text>
+        </inputEntry>
+        <inputEntry id="Rule_5_in2">
+          <text>&gt;= 8.5</text>
+        </inputEntry>
+        <inputEntry id="Rule_5_in3">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="Rule_5_out1">
+          <text>"Eligible"</text>
+        </outputEntry>
+        <outputEntry id="Rule_5_out2">
+          <text>"PARTIAL_B"</text>
+        </outputEntry>
+        <outputEntry id="Rule_5_out3">
+          <text>40000</text>
+        </outputEntry>
+        <outputEntry id="Rule_5_out4">
+          <text>"Middle income slab and CGPA 8.5 or above"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_6">
+        <description>R6</description>
+        <inputEntry id="Rule_6_in1">
+          <text>"MIDDLE"</text>
+        </inputEntry>
+        <inputEntry id="Rule_6_in2">
+          <text>[7.5..8.5)</text>
+        </inputEntry>
+        <inputEntry id="Rule_6_in3">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="Rule_6_out1">
+          <text>"Eligible"</text>
+        </outputEntry>
+        <outputEntry id="Rule_6_out2">
+          <text>"PARTIAL_C"</text>
+        </outputEntry>
+        <outputEntry id="Rule_6_out3">
+          <text>25000</text>
+        </outputEntry>
+        <outputEntry id="Rule_6_out4">
+          <text>"Middle income slab and CGPA 7.5 to below 8.5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_7">
+        <description>R7 catch-all</description>
+        <inputEntry id="Rule_7_in1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="Rule_7_in2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="Rule_7_in3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="Rule_7_out1">
+          <text>"Ineligible"</text>
+        </outputEntry>
+        <outputEntry id="Rule_7_out2">
+          <text>"NONE"</text>
+        </outputEntry>
+        <outputEntry id="Rule_7_out3">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="Rule_7_out4">
+          <text>"No scholarship scheme matched"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1">
+      <dmndi:DMNShape id="DMNShape_1" dmnElementRef="scholarship_eligibility">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

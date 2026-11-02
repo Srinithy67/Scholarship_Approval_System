@@ -1,0 +1,54 @@
+{
+  "components": [
+    {
+      "text": "# Committee step: {{stepTitle}}",
+      "type": "text",
+      "id": "Text_title",
+      "layout": {
+        "row": "Row_com_0",
+        "columns": null
+      }
+    },
+    {
+      "text": "**Student:** {{studentName}} ({{studentId}})\n\n**Course:** {{course}}\n\n**Annual family income:** {{familyIncome}} INR\n\n**CGPA:** {{cgpa}} | **Attendance:** {{attendancePercent}}% | **Active backlogs:** {{activeBacklogs}}\n\n**Automatic decision:** {{decisionReason}}\n\n**Proposed category:** {{scholarshipCategory}} | **Amount:** {{scholarshipAmount}} INR",
+      "type": "text",
+      "id": "Text_summary",
+      "layout": {
+        "row": "Row_com_1",
+        "columns": null
+      }
+    },
+    {
+      "label": "I have reviewed this application",
+      "type": "checkbox",
+      "id": "Field_stepConfirmed",
+      "key": "stepConfirmed",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "Row_com_2",
+        "columns": null
+      }
+    },
+    {
+      "label": "Remarks",
+      "type": "textarea",
+      "id": "Field_stepRemarks",
+      "key": "stepRemarks",
+      "layout": {
+        "row": "Row_com_3",
+        "columns": null
+      }
+    }
+  ],
+  "type": "default",
+  "id": "committee-step-form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 16
+}

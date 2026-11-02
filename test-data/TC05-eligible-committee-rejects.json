@@ -1,0 +1,11 @@
+{
+  "studentName": "Asha Raman",
+  "studentEmail": "asha.raman@student.example",
+  "course": "B.Tech CSE",
+  "incomeCertificateNo": "IC-2026-0001",
+  "studentId": "S2026-005",
+  "familyIncome": 180000,
+  "cgpa": 8.2,
+  "attendancePercent": 88,
+  "activeBacklogs": 0
+}

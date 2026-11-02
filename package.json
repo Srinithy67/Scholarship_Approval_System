@@ -1,0 +1,15 @@
+{
+  "name": "scholarship-approval-automation-system",
+  "version": "1.0.0",
+  "description": "Scholarship Approval Automation System with Camunda 8 and Full-Stack React Portal",
+  "scripts": {
+    "start": "node start-all.js",
+    "start:mock": "npm --prefix mock-api start",
+    "start:workers": "npm --prefix workers start",
+    "start:bff": "npm --prefix bff start",
+    "start:frontend": "npm --prefix frontend run dev",
+    "test": "npm --prefix mock-api test && npm --prefix workers test",
+    "build:frontend": "npm --prefix frontend run build"
+  },
+  "license": "MIT"
+}

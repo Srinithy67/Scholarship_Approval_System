@@ -1,0 +1,14 @@
+{
+  "name": "scholarship-mock-accounts-api",
+  "version": "1.0.0",
+  "description": "Mock accounts + notification API for the Camunda 8 Scholarship Approval System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test ../tests/api.test.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
